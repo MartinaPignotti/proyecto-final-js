@@ -1,0 +1,87 @@
+main {
+  height: 1000px;
+  font-family: 'Roboto', sans-serif;
+ }
+.navbar-text{
+  font-size: 40px;
+  font-family: 'Roboto', sans-serif;
+} 
+#ola{
+  margin-bottom: 50px;
+}
+#jubilado{
+  margin-bottom: 50px;
+}
+#simular{
+  border: 2px solid rgb(38, 92, 161);
+  border-radius: 15px;
+  padding: 5px 25px;
+  background-color: rgb(38, 92, 161);
+  font-size: 20px;
+}
+#devolucion{
+  border: 2px solid rgb(38, 92, 161);
+  border-radius: 15px;
+  padding: 5px 25px;
+  background-color: rgb(38, 92, 161);
+  font-size: 20px;
+}
+.simula{
+  color: rgb(38, 92, 161);
+  font-size: 40px;
+  font-weight: 600;
+ }
+
+.ingresoMonto{
+  color: rgb(38, 92, 161);
+  font-size: 40px;
+ }
+
+.luego {
+  margin-top: 200px;
+  color: rgb(38, 92, 161);
+  font-size: 40px;
+  font-weight: 600;
+}
+.mb-3{
+  width: 50%;
+}
+.imagenPrestamo{
+  width: 400px;
+  height: 400px;
+
+}
+#terminosYcondiciones{
+  padding-right:655px;
+}
+#registrarse{
+  padding-top: 50px;
+  border: 2px solid rgb(38, 92, 161);
+  border-radius: 15px;
+  padding: 5px 25px;
+  background-color: rgb(38, 92, 161);
+  font-size: 20px;
+}
+.footer{
+  margin-top: 1000px;
+}
+
+
+/*CLIMA*/
+#btnClima {
+  left: 300px;
+  border: 2px solid rgb(38, 92, 161);
+  border-radius: 15px;
+  padding: 5px 25px;
+  background-color: #cac7c7;
+  font-size: 20px;
+
+}
+
+#informacionClima {
+  position: left=100 px; }
+  #informacionClima h2 {
+    color: rgb(38, 92, 161);
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+   }
