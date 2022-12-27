@@ -2,6 +2,11 @@ main {
   height: 1000px;
   font-family: 'Roboto', sans-serif;
  }
+ .container-fluid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ }
 .navbar-text{
   font-size: 40px;
   font-family: 'Roboto', sans-serif;
@@ -19,6 +24,7 @@ main {
   background-color: rgb(38, 92, 161);
   font-size: 20px;
 }
+
 #devolucion{
   border: 2px solid rgb(38, 92, 161);
   border-radius: 15px;
@@ -30,6 +36,7 @@ main {
   color: rgb(38, 92, 161);
   font-size: 40px;
   font-weight: 600;
+  
  }
 
 .ingresoMonto{
@@ -63,7 +70,7 @@ main {
   font-size: 20px;
 }
 .footer{
-  margin-top: 1000px;
+  margin-top: 1000px; 
 }
 
 
@@ -84,4 +91,10 @@ main {
     color: rgb(38, 92, 161);
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
+      display: flex;
+      justify-content: center;
    }
+.form-select{
+  width: 50%;
+  margin: 5px;
+}
