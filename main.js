@@ -8,7 +8,7 @@ let descuentoJubilado = () => {
 };
 
 //Evento simular prestamo.
-let simular = $("#simular").on("click", function () {
+  let simular = $("#simular").on("click", function () {
   let monto = $("#monto");
   let cuotas = $("#cuotas");
   /*
@@ -24,7 +24,10 @@ let simular = $("#simular").on("click", function () {
   } else {
     $("#mensaje").append("<p>Usted NO cuenta con descuento por jubilado</p>");
   }
+  localStorage.setItem("monto",monto.val());
+  localStorage.setItem("cuotas",cuotas.val());
 });
+
 
 //Boton borrar simulacion
 
@@ -55,35 +58,40 @@ let devolucion = $("#devolucion").on("click", function () {
     }
   };
 
+  let montoTotal = parseInt(monto.value) + interes() - descuento() 
   $("#div").append(`<h2>Aqui debajo, el monto a devolver: </h2>
                     El monto a pagar una vez finalizadas las cuotas seleccionadas es de : $${
-                      parseInt(monto.value) + interes() - descuento()
+                      montoTotal
                     }<br>`);
-});
+  localStorage.setItem("devolucion",montoTotal)
+
+                            
+  });
 
 //Borrar devolucion:
 $("#btnBorrar2").click(function () {
   $("#div").fadeOut();
 });
 
-class usuario {
-  constructor(email, password) {
-    this.email = email;
-    this.password = password;
-  }
-}
-let usuarioRegistrado = [];
+// class usuario {
+//   constructor(email, password) {
+//     this.email = email;
+//     this.password = password;
+//   }
+// }
+// let usuarioRegistrado = [];
 
-let registro = $("#registrarse").on("click", function () {
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
+// let registro = $("#registrarse").on("click", function (e) {
+//   e.preventDefault()
+//   let email = document.getElementById("email").value;
+//   let password = document.getElementById("password").value;
 
-  let nuevoUsuario = new usuario(email, password);
-  usuarioRegistrado.push(nuevoUsuario);
+//   let nuevoUsuario = new usuario(email, password);
+//   usuarioRegistrado.push(nuevoUsuario);
 
-  ususarioJSON = JSON.stringify(usuarioRegistrado);
-  localStorage.setItem("1", ususarioJSON);
-});
+//   ususarioJSON = JSON.stringify(usuarioRegistrado);
+//   localStorage.setItem("1", ususarioJSON);
+// });
 
 /*GEOLOCATION*/
 let ubicacion = navigator.geolocation.getCurrentPosition(mostrarUbicacion);
@@ -111,4 +119,83 @@ function mostrarUbicacion(position) {
       startClima = true;
     }
   });
+}
+
+// Registrarse 
+
+function addData(){
+   let email = document.getElementById('newEmail').value;
+   let password = document.getElementById('newPassword').value;
+
+   localStorage.setItem('userEmail',email);
+   localStorage.setItem('userPassword',password);
+
+   let loggedEmail = localStorage.getItem('userEmail')
+
+   document.getElementById("mostrarUsuario").innerHTML = `Hemos enviado un mail con los pasos a seguir a :<br>
+   <span style="color:white; font-size:40px"> ${loggedEmail}</span>
+   <br>
+   <br>
+    Muchas gracias !
+   `;
+   
+}
+
+
+function showData () {
+  let getMonto = localStorage.getItem('monto');
+  let getCuotas = localStorage.getItem('cuotas');
+  let getDevolucion = localStorage.getItem('devolucion');
+
+  document.getElementById("mostrarResumen").innerHTML = `El monto a recibir en modo de prestamo es :<span style="color:white; font-size:30px"> $${getMonto}</span>
+  <br> la opción de cantidad de cuotas es la :<span style="color:white; font-size:30px"> ${getCuotas}</span>
+  <br> El monto total a devolver una vez finalizado el préstamo sera de : <span style="color:white; font-size:30px"> $${getDevolucion}</span>
+
+  `
+
+}
+
+
+  // let getEmail = localstorage.getItem('userEmail').value
+  // if (getEmail.value == true) {
+  //   $("#inicioExitoso").append("<p>Usted cuenta con descuento por jubilado</p>");
+  // } else {
+  //   $("#inicioExitoso").append("<p>Usted NO cuenta con descuento por jubilado</p>");
+  // }
+
+
+
+
+function checkData(e){
+
+  let enterEmail = document.getElementById('email').value;
+  let enterPassword = document.getElementById('password').value;
+
+  let getEmail = localStorage.getItem('userEmail');
+  let getPassword = localStorage.getItem('userPassword');
+
+  if(enterEmail == getEmail)
+  {
+    if(enterPassword == getPassword){
+      let newh3 = document.createElement("h3")
+      let newMessage = document.createTextNode("Inicio de sesión exitoso! Bienvenido!");
+      newh3.appendChild(newMessage)
+      const currentDiv = document.getElementById("InicioExitoso");
+      document.body.insertBefore(newh3, currentDiv);
+
+
+      let user = document.createElement("h3")
+      let userLogged = document.createTextNode(`Usuario activo : ${getEmail}`);
+      user.appendChild(userLogged)
+      const currentUser = document.getElementById("InicioExitoso");
+      document.body.insertBefore(user, currentUser);
+    }
+    else{
+      alert("Contraseña incorrecta")
+    }
+  }
+  else{
+    alert("Datos invalidos")
+  }
+
 }

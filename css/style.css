@@ -1,6 +1,13 @@
+body{
+  text-align: center;
+}
+
 main {
   height: 1000px;
   font-family: 'Roboto', sans-serif;
+ }
+ a{
+  text-decoration: none;
  }
  .container-fluid{
   display: flex;
@@ -49,6 +56,7 @@ main {
   color: rgb(38, 92, 161);
   font-size: 40px;
   font-weight: 600;
+  text-decoration: none;
 }
 .mb-3{
   width: 50%;
@@ -70,7 +78,12 @@ main {
   font-size: 20px;
 }
 .footer{
-  margin-top: 1000px; 
+  position: absolute;
+  top: 1800px;
+}
+.footer2{
+  position: absolute;
+  top: 700px;
 }
 
 

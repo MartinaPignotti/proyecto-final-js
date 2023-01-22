@@ -54,19 +54,21 @@
             ></path>
           </svg>
         </div>
-        <div class="input-group mb-3">
+        <div class="container-fluid">
           <h2 class="ingresoMonto">Ingrese el monto de su prestamo :</h2>
           <span class="input-group-text">$</span>
           <input
             type="text"
             class="form-control"
+            style="width: 20%!important; text-align: center;"
             id="monto"
             aria-label="Dollar amount (with dot and two decimal places)"
           />
         </div>
-
+        <div class="container-fluid">
         <select
           class="form-select"
+          style="width: 20%;"
           id="cuotas"
           aria-label="Default select example"
         >
@@ -98,49 +100,12 @@
         <button id="btnBorrar2">Borrar devolución</button>
         <div>
           <div id="div"></div>
-          <h2 class="luego">
-            Luego de simular tu prestamo, registrate y nos comunicamos con vos
-            para asesorarte.
-          </h2>
-          <form>
-            <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label"
-                >Direccion Email</label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                aria-describedby="emailHelp"
-              />
-              <div id="emailHelp" class="form-text">
-                No compartiremos esta informaciòn con nadie mas.
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label"
-                >Contraseña</label
-              >
-              <input type="password" class="form-control" id="password" />
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label
-                class="form-check-label"
-                for="exampleCheck1"
-                id="terminosYcondiciones"
-                >Acepto los terminos y condiciones</label
-              >
-            </div>
-            <button type="submit" class="btn btn-primary" id="registrarse">
-              Soliciar acesoramiento
-            </button>
-          </form>
-          <div id="registrado"></div>
+          <button btn btn-primary style="margin-top: 25px;">
+            <a href="./registro.html" class="luego" >
+              Luego de simular tu prestamo, registrese haciendo click aquí y nos comunicaremos con usted
+              para asesorarlo/a.
+            </a>
+          </button>
         </div>
       </main>
       <footer class="footer">
